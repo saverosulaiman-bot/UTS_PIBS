@@ -1,0 +1,194 @@
+/* RESET BASIC */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #C8A2C8; /* Teks default berwarna ungu lilac */
+}
+
+/* HEADER */
+header {
+    background-color: #1e1e1e;
+    border: 2px solid #333333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #C8A2C8;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* FOTO PROFIL HEADER */
+.user-icon {
+    width: 60px;
+    height: 70px;
+    border: 2px solid #555555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONTAINER */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* NAV, SECTION, ASIDE, FOOTER COMMON STYLES */
+nav, section, aside, footer {
+    border: 2px solid #333333;
+    background-color: #1e1e1e;
+    padding: 15px;
+    color: #C8A2C8;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #C8A2C8;
+    display: block;
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #E6E6FA;
+}
+
+/* KONTEN HEADING & PARAGRAF */
+h1, h2, h3, p, li, span, strong {
+    color: #C8A2C8;
+}
+
+/* LINK PUBLIKASI */
+article#publikasi a {
+    color: #0372e9;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+article#publikasi a:hover {
+    color: #E6E6FA;
+}
+
+/* SWITCHING CONTENT SECTION VIA :TARGET */
+.content-block {
+    display: none;
+}
+
+/* Default Tampil Biodata */
+.content-block.default-show {
+    display: block;
+}
+
+/* Ketika menu diklik (:target) */
+:target {
+    display: block !important;
+}
+
+/* Sembunyikan default saat ada section yang di-target */
+section:has(:target) .default-show:not(:target) {
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    color: #C8A2C8;
+}
+
+/* =================================================== */
+/* MEDIA QUERIES UNTUK RESPONSIVE LAYOUT              */
+/* =================================================== */
+
+/* 1. SMARTPHONE (Default Mobile First / Width 100%) */
+
+/* 2. TABLET PORTRAIT (min-width: 600px) */
+@media screen and (min-width: 600px) {
+    nav ul {
+        display: flex;
+        gap: 15px;
+        border-bottom: 2px solid #333333;
+        padding-bottom: 5px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* 3. TABLET LANDSCAPE (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .main-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        width: 25%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        border-bottom: none;
+    }
+
+    section {
+        width: 73%;
+    }
+
+    aside {
+        width: 100%;
+    }
+}
+
+/* 4. DESKTOP (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    .main-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    nav {
+        width: 25%;
+    }
+
+    section {
+        width: 50%;
+    }
+
+    aside {
+        width: 25%;
+    }
+}
